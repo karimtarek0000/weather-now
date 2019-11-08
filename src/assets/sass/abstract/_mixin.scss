@@ -93,7 +93,7 @@ $vendorPrefixer: ('webkit', 'moz', 'o');
 $headings: ( h1: 6, h2: 4.5, h3: 3, h4: 2.5 );
 
 // PARAGRAPHS
-$paragraphs: ( parBig: 3.5, parSmall: 1.5);
+$paragraphs: ( parBig: 3.5, parSmall: 2.4);
 
 // FONT MANGER
 @mixin fontManger ($type, $el, $unit, $color: white, $lineHeight: false, $tTransform: lowercase) {

@@ -45,7 +45,15 @@ html(lang="en")
                                     span.header__content__location__current__city   alexandria
 
                             //- HEADER CONTENT CALENDER
-                            .header__content__calender test
+                            .header__content__calender
+                                    .header__content__calender__day
+                                        svg.header__content__calender__day__icon
+                                            use(xlink:href="./assets/img/icon svg/sprit.svg#icon-calender")
+                                                title calender
+                                        span.header__content__calender__day__nameday monday
+                                        span.header__content__calender__day__clock.uppercase-text 05:00 am
+
+                                    .header__content__calender__fulldate full date
 
                             //- HEADER CONTENT FORM
                             .header__content__form

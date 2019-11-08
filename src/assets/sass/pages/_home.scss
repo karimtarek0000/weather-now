@@ -75,6 +75,38 @@
       }
     }
     &__calender {
+      // background-color: orange;
+      & > * {
+        width: fit-content;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
+      &__day {
+        // background-color: red;
+        font-weight: 300;
+        &__icon {
+          @include svgManger(2.7rem, 2.7rem, $fill: $color-one);
+          vertical-align: bottom;
+        }
+
+        &__nameday {
+          @include fontManger(
+            "par",
+            "parSmall",
+            rem,
+            $color: $color-one,
+            $tTransform: capitalize
+          );
+          margin-right: 1.5em;
+        }
+
+        &__clock {
+        }
+      }
+
+      &__fulldate {
+        // background-color: red;
+      }
     }
     &__form {
     }
