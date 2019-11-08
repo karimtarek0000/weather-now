@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+
+        //- IMPORTANT ALL DEVICES
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        //- FAV ICON
+        link(rel="shortcut icon", href="./assets/img/favicon/logo.png", type="image/x-icon")
+
+        //- TITLE
+        title weather now
+    body
+
+        main
+
+            //- 
+            header.header
+
+                //- CONTAINER
+                .container
+
+                    //- HEADER BOX
+                    .header__box
+
+                        //- HEADER LOGO
+                        a(href="/", class="header__logo reset-link")
+                            svg
+                                use(xlink:href="./assets/img/icon svg/sprit.svg#icon-logo-weather-now")
+                                    title logo weather now
+                        
+
+                        //- HEADER CONTENT
+                        .header__content
+
+                            //- HEADER CONTENT LOCATION
+                            .header__content__location 
+                                svg
+                                    use(xlink:href="./assets/img/icon svg/sprit.svg#icon-map-marker")
+                                        title map marker
+                                p.header__content__location__current 
+                                    span.header__content__location__current__country egypt, 
+                                    span.header__content__location__current__city   alexandria
+
+                            //- HEADER CONTENT CALENDER
+                            .header__content__calender test
+
+                            //- HEADER CONTENT FORM
+                            .header__content__form
+                                input(type="search", placeholder="search country ...")
+
+                            //- HEADER CONTENT WEATHER
+                            .header__content__weather test
+                                
+
+
+
+

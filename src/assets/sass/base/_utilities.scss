@@ -1,0 +1,24 @@
+// RESET LINK
+.reset-link:link,
+.reset-link:visited {
+    text-decoration: none;
+    display: block;
+}
+
+//// TYPOGRAPHY
+// UPPER CASE
+.uppercase-text {
+    text-transform: uppercase;
+}
+
+// CAPITALIZE CASE
+.capitalize-text {
+    text-transform: capitalize;
+}
+
+// LOWER CASE
+.lowercase-text {
+    text-transform: lowercase;
+}
+
+

@@ -1,0 +1,102 @@
+// HEADER
+.header {
+  height: 100vh;
+  width: 100vw;
+  background: url(../img/rain.jpg) bottom center;
+  background-size: cover;
+  color: $color-one;
+  font-size: 2.5rem;
+  overflow: hidden;
+
+  @include shape(after, top, left, 0, 0, 100%, 100%, $primary-color) {
+    // opacity: 0.7;
+  }
+
+  &__box {
+    position: relative;
+    z-index: 500;
+  }
+
+  &__logo {
+    height: 25vh;
+    width: fit-content;
+
+    @include respond(phone) {
+      height: 20vh;
+      margin: 0 auto;
+    }
+
+    & > svg {
+      @include svgManger(15.3rem, 8.6rem, $fill: $color-one);
+    }
+  }
+
+  &__content {
+    position: relative;
+    @include flexBox(
+      100%,
+      75vh,
+      $fFlow: wrap row,
+      $jContent: center,
+      $aItems: stretch,
+      $flex: 0 1 50%
+    ) {
+      @include respond(phone) {
+        text-align: center;
+        height: 80vh;
+      }
+    }
+
+    &__location {
+      & > * {
+        display: inline-block;
+      }
+      & > svg {
+        @include svgManger(1.8rem, 2.7rem, $fill: $color-one) {
+          margin-right: 0.5em;
+        }
+      }
+
+      &__current {
+        @include fontManger(
+          "par",
+          "parBig",
+          rem,
+          $color: $color-one,
+          $tTransform: capitalize
+        );
+
+        &__country {
+        }
+
+        &__city {
+          font-weight: 300;
+        }
+      }
+    }
+    &__calender {
+    }
+    &__form {
+    }
+    &__weather {
+    }
+
+    &__location,
+    &__calender {
+      height: 35%;
+
+      @include respond(phone) {
+        height: 25%;
+      }
+    }
+
+    &__form,
+    &__weather {
+      height: 65%;
+
+      @include respond(phone) {
+        height: 25%;
+      }
+    }
+  }
+}
