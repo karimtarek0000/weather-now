@@ -12,15 +12,18 @@
     // opacity: 0.7;
   }
 
+  // HEADER BOX
   &__box {
     position: relative;
     z-index: 500;
   }
 
+  // HEADER LOGO
   &__logo {
     height: 25vh;
     width: fit-content;
 
+    // RESPONSIVE
     @include respond(phone) {
       height: 20vh;
       margin: 0 auto;
@@ -31,6 +34,7 @@
     }
   }
 
+  // HEADER CONTENT
   &__content {
     position: relative;
     @include flexBox(
@@ -41,12 +45,14 @@
       $aItems: stretch,
       $flex: 0 1 50%
     ) {
+      // RESPONSIVE
       @include respond(phone) {
         text-align: center;
         height: 80vh;
       }
     }
 
+    // HEADER LOCATION
     &__location {
       & > * {
         display: inline-block;
@@ -57,6 +63,7 @@
         }
       }
 
+      // HEADER CURRENT
       &__current {
         @include fontManger(
           "par",
@@ -66,29 +73,38 @@
           $tTransform: capitalize
         );
 
+        // HEADER CURRENT COUNTRY
         &__country {
         }
 
+        // HEADER CURRENT CITY
         &__city {
-          font-weight: 300;
+          font-weight: $font-weight-light;
         }
       }
     }
+
+    // HEADER CALENDER
     &__calender {
-      // background-color: orange;
-      & > * {
+      // HEADER CALENDER BOX
+      &__box {
         width: fit-content;
         margin-left: 50%;
         transform: translateX(-50%);
       }
+
+      // HEADER CALENDER DAY
       &__day {
-        // background-color: red;
-        font-weight: 300;
+        font-weight: $font-weight-light;
+        padding-bottom: 1rem;
+
+        // HEADER CALENDER DAY ICON
         &__icon {
           @include svgManger(2.7rem, 2.7rem, $fill: $color-one);
           vertical-align: bottom;
         }
 
+        // HEADER CALENDER NAME DAY
         &__nameday {
           @include fontManger(
             "par",
@@ -98,34 +114,97 @@
             $tTransform: capitalize
           );
           margin-right: 1.5em;
+          font-weight: $font-weight-regular;
         }
 
+        // HEADER CALENDER CLOCK
         &__clock {
+          font-weight: $font-weight-regular;
         }
       }
 
+      // HEADER CALENDER FULL DATE
       &__fulldate {
-        // background-color: red;
+        margin-left: 1.2rem;
+        @include shape(before, top, left, 50%, 0, 1px, 80%, $secondary-color);
+
+        & > * {
+          display: block;
+          padding-left: 1.5rem;
+          font-weight: $font-weight-light;
+        }
+
+        &__day {
+          @include shape(
+            before,
+            top,
+            left,
+            7px,
+            -3px,
+            0.7rem,
+            0.7rem,
+            $secondary-color,
+            50%
+          );
+          padding-bottom: .8rem;
+        }
+        &__month {
+          @include shape(
+            before,
+            top,
+            left,
+            50%,
+            -3px,
+            0.7rem,
+            0.7rem,
+            $secondary-color,
+            50%
+          );
+          padding-bottom: .5rem;
+        }
+        &__year {
+          @include shape(
+            before,
+            bottom,
+            left,
+            7px,
+            -3px,
+            0.7rem,
+            0.7rem,
+            $secondary-color,
+            50%
+          );
+          padding-top: .8rem;
+        }
       }
     }
+
+    // HEADER FORM
     &__form {
+      @include formManger(search, block, $widthForm: fit-content, $widthInput: 38.9rem, $padding: 0, $fontSize: 1rem, $bacColor: transparent, $fontColor: black, $border: none, $outline: none, $fcPlaceholder: black, $bRadius: false);
     }
+
+    // HEADER WEATHER
     &__weather {
     }
 
+    // HEADER LOCATION AND CALENDER
     &__location,
     &__calender {
       height: 35%;
 
+      // RESPONSIVE
       @include respond(phone) {
         height: 25%;
       }
     }
 
+    // HEADER FORM AND WEATHER
     &__form,
     &__weather {
       height: 65%;
 
+      // RESPONSIVE
       @include respond(phone) {
         height: 25%;
       }
