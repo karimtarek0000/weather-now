@@ -14,6 +14,9 @@ html(lang="en")
         title weather now
     body
 
+        //- ALL INCLUDES
+        include ./pug/helprs/mixins.pug
+
         main
 
             //- 
@@ -27,30 +30,23 @@ html(lang="en")
 
                         //- HEADER LOGO
                         a(href="/", class="header__logo reset-link")
-                            svg
-                                use(xlink:href="./assets/img/icon svg/sprit.svg#icon-logo-weather-now")
-                                    title logo weather now
-                        
+                            +useSvg('icon-logo-weather-now', 'logo weather now')
 
                         //- HEADER CONTENT
                         .header__content
 
                             //- HEADER CONTENT LOCATION
                             .header__content__location 
-                                svg
-                                    use(xlink:href="./assets/img/icon svg/sprit.svg#icon-map-marker")
-                                        title map marker
+                                +useSvg('icon-map-marker', 'map-marker')
                                 p.header__content__location__current 
-                                    span.header__content__location__current__country egypt, 
-                                    span.header__content__location__current__city   alexandria
+                                    span.header__content__location__current__country#curCountry egypt, 
+                                    span.header__content__location__current__city#curState   alexandria
 
                             //- HEADER CONTENT CALENDER
                             .header__content__calender
                                 .header__content__calender__box
                                     .header__content__calender__day
-                                        svg.header__content__calender__day__icon
-                                            use(xlink:href="./assets/img/icon svg/sprit.svg#icon-calender")
-                                                title calender
+                                        +useSvg('icon-calender', 'calender', 'header__content__calender__day__icon')
                                         span.header__content__calender__day__nameday monday
                                         span.header__content__calender__day__clock.uppercase-text 05:00 am
 
@@ -60,11 +56,17 @@ html(lang="en")
                                         span.header__content__calender__fulldate__year 1990
 
                             //- HEADER CONTENT FORM
-                            .header__content__form
+                            form.header__content__form
                                 input(type="search", placeholder="search country ...")
+                                button(class="header__content__form__submit reset-btn", type="submit")
+                                    +useSvg('icon-search', 'search', 'header__content__form__icon')
+
+                            
 
                             //- HEADER CONTENT WEATHER
                             .header__content__weather test
+
+                        #map
                                 
 
 

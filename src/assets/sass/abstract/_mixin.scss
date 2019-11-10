@@ -280,7 +280,7 @@ $paragraphs: ( parBig: 3.5, parSmall: 2.4);
         font-size: $fontSize;
         color: $fontColor;
         border-radius: $bRadius;
-        text-transform: capitalize;
+        text-transform: lowercase;
         @content;
 
 
@@ -288,6 +288,7 @@ $paragraphs: ( parBig: 3.5, parSmall: 2.4);
         &::placeholder {
             color: $fcPlaceholder;
             font-family: inherit;
+            text-transform: capitalize;
             @content;
         }
 

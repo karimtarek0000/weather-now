@@ -1,0 +1,5 @@
+//- MIXIN USE SVG TAGS
+mixin useSvg(icon, title, nameClass = null) 
+    svg(class=nameClass)
+        use(xlink:href="./assets/img/icon svg/sprit.svg#" + icon)
+            title #{title}
