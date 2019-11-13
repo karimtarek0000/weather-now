@@ -36,11 +36,10 @@ html(lang="en")
                         .header__content
 
                             //- HEADER CONTENT LOCATION
-                            .header__content__location 
+                            .header__content__location
                                 +useSvg('icon-map-marker', 'map-marker')
-                                p.header__content__location__current 
-                                    span.header__content__location__current__country#curCountry egypt, 
-                                    span.header__content__location__current__city#curState   alexandria
+                                p.header__content__location__current
+                                   
 
                             //- HEADER CONTENT CALENDER
                             .header__content__calender
@@ -64,9 +63,23 @@ html(lang="en")
                             
 
                             //- HEADER CONTENT WEATHER
-                            .header__content__weather test
+                            .header__content__weather 
+                                .header__content__weather__inner
+                                    +useSvg('icon-cold', 'icon-cold')
 
-                        #map
+                                    p.header__content__weather__class 12
+
+                                    .header__content__weather__temp.uppercase-text
+                                        span.header__content__weather__temp__celi c
+                                        span.header__content__weather__temp__frhin f
+
+
+
+
+                                        
+                                    
+
+
                                 
 
 

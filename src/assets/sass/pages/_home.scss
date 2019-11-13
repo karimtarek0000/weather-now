@@ -54,12 +54,14 @@
 
     // HEADER LOCATION
     &__location {
+      overflow: hidden;
       & > * {
         display: inline-block;
       }
       & > svg {
         @include svgManger(1.8rem, 2.7rem, $fill: $color-one) {
           margin-right: 0.5em;
+          display: none;
         }
       }
 
@@ -187,17 +189,16 @@
         block,
         $widthForm: fit-content,
         $widthInput: 38.9rem,
-        $padding: calc(0.9em/2) 2em,
+        $padding: calc(0.9em / 2) 2em,
         $fontSize: 0.8em,
         $bacColor: rgba(#ffffff, 0.3),
         $fontColor: $secondary-color,
-        $border: 1px solid rgba($secondary-color, .3),
+        $border: 1px solid rgba($secondary-color, 0.3),
         $outline: none,
         $fcPlaceholder: rgba($secondary-color, 0.7),
         $bRadius: 30px
       ) {
-
-        transition: border-color .5s ease;
+        transition: border-color 0.5s ease;
 
         &::placeholder {
           font-weight: $font-weight-light;
@@ -216,10 +217,6 @@
       &__icon {
         @include svgManger(2.6rem, 2.6rem, $fill: $color-one);
       }
-    }
-
-    // HEADER WEATHER
-    &__weather {
     }
 
     // HEADER LOCATION AND CALENDER
@@ -241,6 +238,53 @@
       // RESPONSIVE
       @include respond(phone) {
         height: 25%;
+      }
+    }
+
+
+
+    /////////////////////////////
+    // HEADER CONTENT WEATHER
+    &__weather {
+      &__inner {
+        // background-color: red;
+        @include flexBox(
+          100%,
+          100%,
+          $fFlow: wrap row,
+          $jContent: center,
+          $aItems: flex-start
+        );
+
+        & > svg {
+          @include svgManger(15.7rem, 15.7rem, $fill: $secondary-color) {
+            align-self: center;
+          }
+        }
+      }
+
+      &__class {
+        font-size: $font-size-class;
+        font-weight: 300;
+
+        @include shape(before, top, left, -15px, -15px, 50px, 50px, $borderRadius: 50%) {
+          border: 5px solid $secondary-color;
+        };
+      }
+
+      &__temp {
+        // background-color: red;
+        font-size: 36px;
+
+        @include shape(after, top, left, 0, 51%, 2px, 100%, $color: white);
+
+        &__celi {
+          margin-right: 30px;
+        }
+
+        &__frhin {
+          opacity: .5;
+        }
       }
     }
   }
