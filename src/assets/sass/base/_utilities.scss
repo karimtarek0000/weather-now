@@ -5,6 +5,11 @@
     display: block;
 }
 
+// 
+.display-none {
+    display: none;
+}
+
 //// TYPOGRAPHY
 // UPPER CASE
 .uppercase-text {
@@ -19,6 +24,10 @@
 // LOWER CASE
 .lowercase-text {
     text-transform: lowercase;
+}
+
+.text-center {
+    text-align: center;
 }
 
 //// BTN

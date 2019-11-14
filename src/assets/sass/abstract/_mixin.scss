@@ -283,7 +283,6 @@ $paragraphs: ( parBig: 3.5, parSmall: 2.4);
         text-transform: lowercase;
         @content;
 
-
         // PLACE HOLDER
         &::placeholder {
             color: $fcPlaceholder;

@@ -2,9 +2,9 @@
 import axios from 'axios';
 
 // CONST API
-const appId = 'EQHrtTdWgbVo5vXDTVdA',
-    appCode = 'Txo9T9stJo3kgoCoIsPYjQ',
-    apiKeySky = '6457893945213e0d272e0c4befdba105',
+const appId = 'vOUsAtOZOrSQkbnuL1sO',
+    appCode = 'yffRDOXnzbuXvYttnWi5Og',
+    apiKeySky = '8c938c840ed26afd4377d8cac891e998',
     proxy = `https://cors-anywhere.herokuapp.com/`,
     apiUrl = `${proxy}https://weather.api.here.com/weather/1.0/report.json?app_id=${appId}&app_code=${appCode}`;
 
@@ -27,7 +27,7 @@ export class getStateCountry {
     // CONVERT TEMPERATURE
     convertTemperature(temp) {
         const celusies = (temp - 32) * (5 / 9);
-        return this.tempCelusies = celusies;
+        return this.tempCelusies = Math.round(celusies);
     };
 
     // SET DATA WILL BE GET COORDS FROM FUNCTION GET CUR POSITION
@@ -54,3 +54,4 @@ export class getStateCountry {
     };
 
 }
+

@@ -19,7 +19,7 @@ html(lang="en")
 
         main
 
-            //- 
+            //- HEADER
             header.header
 
                 //- CONTAINER
@@ -56,20 +56,23 @@ html(lang="en")
 
                             //- HEADER CONTENT FORM
                             form.header__content__form
-                                input(type="search", placeholder="search country ...")
-                                button(class="header__content__form__submit reset-btn", type="submit")
-                                    +useSvg('icon-search', 'search', 'header__content__form__icon')
+                                .header__content__form__inner
+                                    input(type="search", placeholder="search country ...")
+                                    button(class="header__content__form__submit reset-btn", type="submit")
+                                        +useSvg('icon-search', 'search', 'header__content__form__icon')
 
                             
 
                             //- HEADER CONTENT WEATHER
                             .header__content__weather 
                                 .header__content__weather__inner
-                                    +useSvg('icon-cold', 'icon-cold')
+                                    //- +useSvg('icon-cold', 'icon-cold')
 
-                                    p.header__content__weather__class 12
+                                    .header__content__weather__info.text-center.uppercase-text
+                                        //- p.header__content__weather__info__class 12
+                                        //- p.header__content__weather__info__summary cold
 
-                                    .header__content__weather__temp.uppercase-text
+                                    .header__content__weather__temp.display-none
                                         span.header__content__weather__temp__celi c
                                         span.header__content__weather__temp__frhin f
 

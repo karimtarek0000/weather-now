@@ -24,7 +24,7 @@
     width: fit-content;
 
     // RESPONSIVE
-    @include respond(phone) {
+    @include respond(tablet-p) {
       height: 20vh;
       margin: 0 auto;
     }
@@ -46,9 +46,10 @@
       $flex: 0 1 50%
     ) {
       // RESPONSIVE
-      @include respond(phone) {
+      @include respond(tablet-p) {
         text-align: center;
-        height: 80vh;
+        height: fit-content;
+        flex: 1 1 100%;
       }
     }
 
@@ -86,6 +87,7 @@
       }
     }
 
+    ///////////////////////////////////
     // HEADER CALENDER
     &__calender {
       // HEADER CALENDER BOX
@@ -183,13 +185,21 @@
 
     // HEADER FORM
     &__form {
-      position: relative;
+      @include respond(tablet-p) {
+        margin: 50px 0 80px 0;
+        flex: 0 1 50%;
+      }
+
+      &__inner {
+        position: relative;
+      }
+
       @include formManger(
         search,
         block,
         $widthForm: fit-content,
         $widthInput: 38.9rem,
-        $padding: calc(0.9em / 2) 2em,
+        $padding: 0.4em 2em,
         $fontSize: 0.8em,
         $bacColor: rgba(#ffffff, 0.3),
         $fontColor: $secondary-color,
@@ -199,6 +209,10 @@
         $bRadius: 30px
       ) {
         transition: border-color 0.5s ease;
+
+        @include respond(tablet-p) {
+          padding: 10px 33px;
+        }
 
         &::placeholder {
           font-weight: $font-weight-light;
@@ -225,65 +239,99 @@
       height: 35%;
 
       // RESPONSIVE
-      @include respond(phone) {
-        height: 25%;
+      @include respond(tablet-p) {
+        height: 15%;
       }
     }
 
     // HEADER FORM AND WEATHER
-    &__form,
     &__weather {
       height: 65%;
 
       // RESPONSIVE
-      @include respond(phone) {
-        height: 25%;
+      @include respond(tablet-p) {
+        height: 35%;
       }
     }
-
-
 
     /////////////////////////////
     // HEADER CONTENT WEATHER
     &__weather {
       &__inner {
-        // background-color: red;
         @include flexBox(
           100%,
           100%,
-          $fFlow: wrap row,
+          $fDirection: row,
           $jContent: center,
           $aItems: flex-start
-        );
+        ) {
+          @include respond(tablet-l) {
+            flex: 0 1 20%;
+          }
+        }
 
         & > svg {
           @include svgManger(15.7rem, 15.7rem, $fill: $secondary-color) {
-            align-self: center;
+            margin: 6rem 3rem 0 0;
           }
         }
       }
 
-      &__class {
-        font-size: $font-size-class;
-        font-weight: 300;
+      &__info {
+        flex: 0 1 50%;
+        &__class {
+          font-size: $font-size-class;
+          font-weight: 300;
 
-        @include shape(before, top, left, -15px, -15px, 50px, 50px, $borderRadius: 50%) {
-          border: 5px solid $secondary-color;
-        };
+          @include shape(
+            before,
+            top,
+            left,
+            2px,
+            10px,
+            50px,
+            50px,
+            $borderRadius: 50%
+          ) {
+            border: 5px solid $secondary-color;
+          }
+        }
+
+        &__summary {
+          font-size: 50px;
+        }
       }
 
       &__temp {
-        // background-color: red;
-        font-size: 36px;
+        width: 100px;
+        @include shape(
+          after,
+          top,
+          left,
+          0,
+          50%,
+          2px,
+          100%,
+          $color: $secondary-color
+        );
+        @include fontManger(
+          "par",
+          "parBig",
+          rem,
+          $color: $secondary-color,
+          $tTransform: uppercase
+        );
 
-        @include shape(after, top, left, 0, 51%, 2px, 100%, $color: white);
+        & > * {
+          cursor: pointer;
+        }
 
         &__celi {
-          margin-right: 30px;
         }
 
         &__frhin {
-          opacity: .5;
+          margin-left: 50%;
+          opacity: 0.5;
         }
       }
     }
